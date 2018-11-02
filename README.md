@@ -1,2 +1,2 @@
-# imaghe_processing
+# image_processing
 Rice classification
