@@ -1,0 +1,6 @@
+*.png
+*.jpg
+.idea/
+__pycache__/
+*.xml
+.idea/vcs.xml
