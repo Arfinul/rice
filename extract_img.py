@@ -10,12 +10,7 @@ def crop_grains(image_name):
     m = re.search('[\w]+', image_name)
     folder_name = m.group(0)
     # folder_name = image_name[:-4]
-    print(folder_name)
-    print(image_name)
-    print(os.getcwd())
-    # path ="C:\\Users\\Agnext-Arfin\\git_hub\\rice_gc\\DSC00326.jpg"
     img = cv2.imread(image_name)
-    print(image_name)
     gray = cv2.imread(image_name, 0)
 
     #	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -37,7 +32,7 @@ def crop_grains(image_name):
     #	print('Number of separate grains: ', len(contours))
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
-    path = os.getcwd()
+    # path = os.getcwd()
     os.chdir(os.getcwd() + '/' + folder_name)
     for c in contours:
         epsilon = 0.01 * cv2.arcLength(c, True)
@@ -110,5 +105,5 @@ def crop_grains(image_name):
     # out1 = cv2.resize(img, (1000,500))
     # cv2.imshow('Otsu_out', out1)
     # cv2.waitKey(0)
-    os.chdir(path)
+    # os.chdir(path)
     cv2.destroyAllWindows()
